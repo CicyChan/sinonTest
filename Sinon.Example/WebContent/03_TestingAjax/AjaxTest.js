@@ -11,7 +11,6 @@ QUnit.module( "Sinon.Example.03_AjaxTest", {
 
 QUnit.test( "makes a GET request for todo items ", function( assert ) {
 	 sinon.stub(jQuery, 'ajax');
-	    getTodos(42, sinon.spy());
-
-	    assert.ok(jQuery.ajax.calledWithMatch({ url: '/todo/42/items' }));
+	 getTodos(42, sinon.spy());
+	 assert.ok(jQuery.ajax.calledWithMatch({ url: '/todo/42/items' }));
 });
