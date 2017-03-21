@@ -38,3 +38,22 @@ QUnit.test( "calls original function with right this and args", function( assert
     assert.ok(callback.calledOn(obj));
     assert.ok(callback.calledWith(1, 2, 3));
 });
+
+QUnit.test( "Spy Test for funciton with paramters", function( assert ) {
+   var proxy = sinon.spy(messageOutPut);
+   proxy("Spy Test with Paramter");
+   
+   assert.ok(proxy.called);
+});
+
+QUnit.test( "Spy Test for Object Methd with paramters", function( assert ) {
+	   var proxy = sinon.spy(oStudent, "introduction");
+	   
+	   proxy.withArgs("SpyTest with Object Method");
+	   oStudent.introduction("SpyTest with Object Method")
+	   
+	   assert.ok(proxy.withArgs("SpyTest with Object Method").calledOnce);
+	   
+	   oStudent.introduction.restore();
+	   
+	});

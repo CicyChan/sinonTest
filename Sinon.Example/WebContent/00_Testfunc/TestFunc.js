@@ -18,7 +18,7 @@ function getTodos(listId, callback) {
             callback(null, data);
         }
     });
-}
+};
 
 function throttle(callback) {
     var timer;
@@ -29,4 +29,20 @@ function throttle(callback) {
             callback.apply(this, args);
         }, 100);
     };
+};
+
+function messageOutPut(smessage){
+	var sLog = "this is message output";
+	console.log(sLog + smessage);
+};
+
+
+
+var oStudent = {
+		name : "Jack Chan",
+		age  : '21',
+		introduction : function(sString){
+			console.log(sString)
+		}
 }
+
