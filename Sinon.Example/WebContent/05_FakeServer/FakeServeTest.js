@@ -15,7 +15,7 @@ QUnit.test( "calls callback with deserialized data", function( assert ) {
 	 var callback = sinon.spy();
 	    getTodos(42, callback);
 
-	    // This is part of the FakeXMLHttpRequest API
+	    // This is part of the FakeXMLHttpRequest API, simulate the Ajax reqeust
 	    server.requests[0].respond(
 	        200,
 	        { "Content-Type": "application/json" },
